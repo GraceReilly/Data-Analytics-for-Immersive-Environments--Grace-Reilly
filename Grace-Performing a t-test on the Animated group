@@ -1,0 +1,20 @@
+library(readxl)
+
+# read in data from excel file on pc
+data <- read_excel("C:/Users/iviic/OneDrive/Desktop/data.xlsx", sheet = 1)
+
+# select the post_trial_cpss column for the Animated group
+data_animated <- data[data$test_group == "Animated", "post_trial_cpss"]
+
+# perform t-test on the data_animated and store the result in the object t-test
+t_test <- t.test(data_animated)
+
+# create a vector of t-values ranging from -4 to 4 in increments of 0.1
+t_values <- seq(from = -4, to = 4, by = 0.1)
+
+# calculate density values for the t-values
+density <- dt(t_values, df = t_test$parameter)
+
+# plot t-distribution for the Animated group
+plot(t_values, density, type = "l", xlab = "T-test", ylab = "Density", main = "T-test for Animated", lty = 2, lwd = 2, col = "green")
+grid()
