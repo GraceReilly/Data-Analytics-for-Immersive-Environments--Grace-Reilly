@@ -1,0 +1,18 @@
+# Load the necessary libraries
+library(tidyverse)
+library(openxlsx)
+
+# Read in the data from the Excel file on pc
+data <- read.xlsx("~/Downloads/data (1).xlsx", sheet = 1)
+
+# Filter the data to only include the "Control" and "Animated" categories
+filtered_data <- data %>% filter(test_group %in% c("Control", "Animated"))
+
+# Calculate the difference between the means of the two groups
+difference <- mean(filtered_data$post_trial_cpss[filtered_data$test_group == "Animated"]) - mean(filtered_data$post_trial_cpss[filtered_data$test_group == "Control"])
+
+# Plot the results using ggplot2. The ggplot function initializes a plot using the filtered_data. The geom_text function adds a label to the plot showing the calculated difference between the means of the two groups.
+ggplot(filtered_data, aes(x = test_group, y = post_trial_cpss)) +
+    geom_boxplot() +
+    stat_summary(fun.data = "mean_sdl", geom = "errorbar", width = 0.3) +
+    geom_text(x = 1, y = max(filtered_data$post_trial_cpss), label = paste("Difference:", difference), size = 4)
