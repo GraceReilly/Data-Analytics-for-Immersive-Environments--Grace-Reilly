@@ -1,0 +1,12 @@
+# Loading the libaries necessary
+library(dplyr)
+library(readxl)
+library(xlsx)
+
+# Reading the data from the file path on desktop
+data <- read_excel("C:/Users/iviic/OneDrive/Desktop/data.xlsx")
+
+# Group data by test_group column and compute median for each group. Than storing the results in a new data frame called median_by_group. The median column shows the median value of the post trial cpss for each group
+median_by_group <- data %>%
+    group_by(test_group) %>%
+    summarize(median = median(post_trial_cpss))
