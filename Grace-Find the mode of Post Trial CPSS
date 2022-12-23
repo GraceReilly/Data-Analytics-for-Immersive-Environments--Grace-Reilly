@@ -1,0 +1,15 @@
+# Loading the necessary libaries 
+library(dplyr)
+library(readxl)
+library(xlsx)
+
+# Read in the data from the excel file path located on PC
+data <- read_excel("C:/Users/iviic/OneDrive/Desktop/data.xlsx")
+
+# the code groups the data into the test_group column and compute to find the mode for each group using the summarize function. Then the which.max function returns the maximum value in a vector and the names function returns the names
+mode_by_group <- data %>%
+    group_by(test_group) %>%
+    summarize(mode = names(which.max(table(post_trial_cpss))))
+    
+# Then the code shows the result
+write.xlsx(mode_by_group, file = "C:/Users/iviic/OneDrive/Desktop/output_file.xlsx")
