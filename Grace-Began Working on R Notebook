@@ -1,0 +1,84 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: 72
+    preview: true
+---
+
+## Data Analytics for Immersive Environments - Grace Reilly
+
+#### Student No. D00262395
+
+### Table of Contents
+
+#### **1. Abstract**
+
+#### **2. Introduction**
+
+-   Topic & Context
+
+-   Rationale & Hypothesis
+
+#### **3. Method**
+
+#### **4. Results**
+
+#### **5. Discussion**
+
+#### **6. References**
+
+#### **1. Abstract**
+
+The aim of this study was to determine which, if any acts as an
+effective treatment for PTSD. The study divided 150 patients (M= 75,
+F=75) into 3 groups using random sampling dependent on the type of
+treatment they would receive; Control (traditional CBT, no VR), Static
+(non-animated model content, VR), Animated (animated model content, VR).
+Treatment consisted of a 50 minute session weekly with a therapist over
+12 weeks. PTSD measurements for all groups were measured using the
+observer-rated and self-report mechanisms. Findings concluded that
+patients OR and CPSS-SR measurement were significantly decreased post
+treatment. Graph 1a shows that the OR and CPSS-SR measurements are very
+closely related. Furthermore the report suggests there is no leading
+therapy for PTSD.
+
+#### **2.Introduction**
+
+-   Rationale & Hypothesis
+
+Post-traumatic stress disorder (PTSD) is observed in humans that have
+been exposed to a horrifying event, through direct experience or witness
+of such event. Symptoms might include vivid flashbacks, nightmares,
+intense distress and severe anxiety (Mayo Clinic link). Evidently this
+mental health issue can be very distressing for those affected.
+Therapies utilised were; Control (traditional Cognitive Behavioural
+Therapy (CBT), no Virtual Reality (VR)), Static (non-animated model
+content, VR), Animated (animated model content, VR). Traditional CBT
+involves the therapist and patient working through current day issues.
+They will navigate through the patients thoughts, emotions and
+behaviours together (HSE link). The rationale behind this study is to
+understand what the most effective treatment is for PTSD in young
+adults. The null hypothesis states that no one group had a higher OR
+and/or CPSS-SR measurement. The alternative hypothesis states that one
+group has a higher OR and/or CPSS-SR measurement.
+
+#### **3.Method**
+
+150 patients (aged 18-25) enrolled in the study was conducted over 12
+weeks (1st August 2022 - 23rd of October 2022). The patients (M= 75,
+F=75) into 3 equal groups using random sampling dependent on the type of
+treatment they would receive; Control (traditional CBT, no VR), Static
+(non-animated model content, VR), Animated (animated model content, VR).
+The three groups underwent therapy with the same therapists to ensure
+that all patients results are comparable. Similarly each patient was
+treated for 50 minutes, once a week across the 12 weeks. The study aims
+to determine the most effective treatment for PTSD through statistical
+analysis such as histograms, standard deviation and the T test. Insert
+other methods used -- R note book to evaluate Y. PTSD measurements for
+all groups were measured using the observer-rated (therapist score) and
+self-report (self-score). These values assess the extremity of PTSD
+symptoms in said patient (APA PyscNet). Measurements were taken at the
+start and end of the study. It was this data was used for determining
+effectiveness of PTSD treatments.
