@@ -1,0 +1,20 @@
+# Load the necessary libraries
+library(tidyverse)
+library(openxlsx)
+
+# Read in the data from the Excel file
+data <- read.xlsx("~/Downloads/data (1).xlsx", sheet = 1)
+
+# Calculate the confidence intervals for the post_trial_cpss for each category in the test_group column, grouped by the test_grouo column.
+Calculating the confidence interval using the mean and standard deviation of the post trial_cpss column and the 1.96 value to calculate the 95% interval.
+conf_ints <- data %>%
+    group_by(test_group) %>%
+    summarize(lower = mean(post_trial_cpss) - 1.96 * sd(post_trial_cpss)/sqrt(n()),
+              upper = mean(post_trial_cpss) + 1.96 * sd(post_trial_cpss)/sqrt(n()),
+              post_trial_cpss = mean(post_trial_cpss))
+
+# Plot the results using ggplot2
+ggplot(data, aes(x = test_group, y = post_trial_cpss)) +
+    geom_boxplot() +
+    stat_summary(fun.data = "mean_sdl", geom = "errorbar", width = 0.3) +
+    geom_errorbar(data = conf_ints, aes(x = test_group, ymin = lower, ymax = upper), width = 0.3)
